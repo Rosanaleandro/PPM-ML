@@ -1,0 +1,3 @@
+#!C:\Users\rosan\Documents\Projeto\PPM-ML\Scripts\python.exe
+from numba.pycc import main
+main()

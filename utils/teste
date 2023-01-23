@@ -1,0 +1,59 @@
+from operator import index
+from tkinter.tix import COLUMN
+import numpy as np
+import pandas as pd
+from prov.model import ProvDocument, Namespace, Literal, PROV
+from prov.dot import prov_to_dot
+import time
+import os
+import json
+
+
+class Provenance:
+    # PEP 257 - DocString
+    """
+    Cria um objeto para gerenciar a proveniência do pré-processamento
+
+    Atributos:
+    df_entidades
+    provDoc
+    namespaces
+    q_linhas
+    q_colunas
+    atributos
+    Métodos:
+    """
+    NAMESPACE_FUNC = 'activity:'
+    NAMESPACE_ENTITY = 'entity:'
+    # PROV-N
+    GENERATION = 'wasGeneratedBy'
+    USE = 'used'
+    DERIVATION = 'wasDerivedFrom'
+    INVALIDATION = 'wasInvalidatedBy'
+
+    def __init__(self, df, nomedb, caminho):
+        # Inicia após a leitura da base
+        self.n_colecao = []
+        self.n_entidades = []
+        self.n_activity = []
+
+    # Cria o documento de proveniência e os namespaces
+        self.provDoc = self.create_prov_document()    
+    def create_ent_collection(self, dataframe, colec):
+        """Retorna  um  array de entidades relacionadas ao dataframe."""
+
+        c_colunas = list(dataframe.columns)
+        print("c_colunas:{}".format(c_colunas))
+        for col in c_colunas:
+           # ent_id = self.NAMESPACE_ENTITY + str(att)
+            #print('a coluna é: {}' . format(col))
+            ent_id = self.NAMESPACE_ENTITY + str(col)
+            ent = {'identifier': ent_id}
+            objent = self.provDoc.entity(ent_id)
+            self.provDoc.hadMember(colec, objent)
+            
+            # Retorna a entidade para o array
+            self.n_entidades.append(objent)
+        return self.n_entidades
+
+        
