@@ -328,7 +328,7 @@ else:
                 #lista_item.append(xai)
 
                 obj.append(lista_item) 
-            #resultado = pd.DataFrame(obj, columns=['label_feature_importance', 'value_Feature_importance', 'Id_xai'])     
+  
             resultado = pd.DataFrame(obj, columns=['label_feature_importance', 'value_Feature_importance'])
             st.info("Informação do(s) resultado(s) XAI para o Xai "+str(num_xai))
                 #st.write("Workflow: ", num_wkf)

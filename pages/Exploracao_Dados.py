@@ -6,9 +6,7 @@ from tkinter import Y, Button
 
 import seaborn as sns
 import matplotlib.pyplot as plt
-#import os
 
-# Import da base
 from sqlalchemy.orm import sessionmaker, synonym
 from db.connect_db import database
 from db.model import save_to_database, Workflow, Dataset, Dataset_Attribute, OperatorsActivity, Experiment, Parameter, Experiment_Attribute, Xai, Xai_Results
@@ -170,32 +168,7 @@ else:
     
     exploration = explore(df)
     st.dataframe(exploration, width=900, height=600)
-        # st.write(exploration)
-    # Carregar dataset de descrição dos dados
-    # col1, col2, col3, col4 = st.columns(4)
-    # with col1:
-    #      st.text("Basic Information")
-    #      st.write("Dataset Name")
-    #      st.text(file.name)
 
-    # #     st.write("Dataset Shape")
-    # #     st.write(df.shape)
-        
-    # with col2:
-    # #     st.text("Atributos")
-    #      exploration1 = explore(df)
-    # #     st.write(exploration1.df_dtypes)
-    #      st.dataframe(exploration1.dtypes)
-    
-    # with col3:
-    #      st.text("Atributos Numéricos")
-    #      st.dataframe(num_features.columns)
-    
-    # with col4:
-    #      st.text("Atributos categóricos")
-    #      st.dataframe(cat_features.columns)
-    
-    
     
     if st.checkbox('Carregar arquivo de descrição'):
         st.info( "Por favor carregue o arquivo de descrição no menu lateral")

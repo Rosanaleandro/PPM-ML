@@ -16,7 +16,6 @@ from db.connect_db import database
 from db.model import save_to_database, save_to_experim, Workflow, Dataset, Dataset_Attribute, OperatorsActivity, Experiment, Parameter, Experiment_Attribute, Xai, Xai_Results
 from statistics import mode
 # from sqlalchemy.orm import sessionmaker
-
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -26,9 +25,6 @@ from sklearn.metrics import confusion_matrix, classification_report
 from utils import (over_sampling, under_sampling)
 
 
-#from utils import (markdown_outliers, markdown_missing_values, markdown_class_desbalance,
-#                   markdown_class_desbalance_v2, markdown_class_desbalance_v3, markdown_binning,
-#                   markdown_scaling, markdown_standardization, markdown_onehot, markdown_ordinal)
 
 conn_db = database(is_table_log=True)
 df = st.session_state["dataset"]
@@ -135,7 +131,7 @@ if classification_tipo == 'Random Forest':
  
         st.set_option('deprecation.showPyplotGlobalUse', False)
         #st.subheader("2.2. Matriz de Confusão")
-        st.subheader("3.3. Matrix de confusão")
+        st.subheader("3.3. Matriz de confusão")
 
         sns.heatmap(confusion_matrix(st.session_state['y_test'], st.session_state['y_pred']), cmap='OrRd', annot=True, fmt='2.0f', annot_kws={"size": 20, "weight": "bold"})        
 
@@ -191,7 +187,7 @@ else:# model =="Support Vector Machine":
         
         #st.set_option('deprecation.showPyplotGlobalUse', False)
         #st.subheader("2.2. Matriz de Confusão")
-        st.subheader("3.2. Matrix de confusão")
+        st.subheader("3.2. Matriz de confusão")
         plot_confusion_matrix(st.session_state['modelo'], st.session_state['X_test'], st.session_state['y_test'], display_labels=class_names, cmap='OrRd', annot_kws={"size": 20, "weight": "bold"})
         #st.pyplot()
         #sns.heatmap(confusion_matrix(st.session_state['y_test'], st.session_state['y_pred']), cmap='OrRd', annot=True, fmt='2.0f')
