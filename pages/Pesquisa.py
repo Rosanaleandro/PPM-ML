@@ -334,6 +334,21 @@ else:
                 #st.write("Workflow: ", num_wkf)
             st.table(resultado)
         else:
-            st.info('Não há XAI para o workflow escolhido! ')     
+            st.info('Não há XAI para o workflow escolhido! ')    
+
+st.markdown('<br>', unsafe_allow_html=True)
+st.subheader('Pesquisas por comando SQL')
+query = st.text_area('Comando SQL para pesquisa: ')
+
+
+if st.button('Executar Query'):
+    try:
+        #value_query = st.slider('', min_value=1, max_value=1000, value=5)
+        df_query = pd.read_sql(query, conn_db)
+
+        #st.table(df_query.head(value_query))
+        st.table(df_query)
+    except Exception as e:
+            st.error('Query Inválida!')
 
 
