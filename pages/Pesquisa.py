@@ -28,10 +28,6 @@ titl_templ = """
 
 st.markdown(titl_templ, unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
-#st.markdown('<hr size=15>', unsafe_allow_html=True)
-#st.markdown('### 4 - Train DataSet')
-#df = st.session_state["dataset"]
-
 conn_db = database(is_table_log=True)
 
 @st.cache(suppress_st_warning=True)
@@ -145,7 +141,7 @@ if st.button('OK'):
                 descricao=item.description
                 lista_item.append(descricao)
                 obj.append(lista_item)
-            #st.write(obj) 
+            
             resultado = pd.DataFrame(obj, columns=['Id', 'label', 'Tipo','Descrição do atributo'])
             st.info("Informação dos atributos originais do Dataset")
             st.table(resultado)   
@@ -205,7 +201,7 @@ if st.button('OK'):
                 f1score=item.f1score
                 lista_item.append(f1score)
                 obj.append(lista_item)
-                #st.write(obj) 
+                 
             resultado = pd.DataFrame(obj, columns=['Id', 'method', 'accuracy', 'recall', 'precision','f1score'])
             st.info("Informação do(s) experimento(s) para o Dataset")
             st.write("Workflow: ", num_wkf)
@@ -258,12 +254,10 @@ if consulta1 == "Pré-processamento por atributo":
                 lista_item.append(name)
                 function=item.function
                 lista_item.append(function)
-                #workflow=item.workflow
-                #lista_item.append(workflow)
                 label_attribute=item.label_attribute
                 lista_item.append(label_attribute)
                 obj.append(lista_item)
-            #st.write(obj) 
+             
             resultado = pd.DataFrame(obj, columns=['Name_Operator', 'Function_Operator', 'Atributo'])
             st.info("Informação do processamento específico para "+str(atributo))
             st.table(resultado)   
@@ -343,10 +337,10 @@ query = st.text_area('Comando SQL para pesquisa: ')
 
 if st.button('Executar Query'):
     try:
-        #value_query = st.slider('', min_value=1, max_value=1000, value=5)
+        
         df_query = pd.read_sql(query, conn_db)
 
-        #st.table(df_query.head(value_query))
+        
         st.table(df_query)
     except Exception as e:
             st.error('Query Inválida!')

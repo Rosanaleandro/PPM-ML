@@ -27,7 +27,7 @@ from utils.preprocessing import  convert_type
 #def main():
     # -------------------------------- Sidebar -------------------------------
 st.set_page_config(
-page_title="Multipage App",
+page_title="XMML-PPP",
 page_icon="👋",
 )
 
@@ -48,7 +48,7 @@ for key, page in pages.items():
 
 titl_templ = """
         <div style="background-color: royalblue; padding: 15px;border-radius:15px">
-        <h2 style="color: mintcream">PPM-ML - Machine Learning Tool with XAI Support</h2>
+        <h2 style="color: mintcream">xMML-PPP Tool - Explainable Machine Learning Tool with XAI Support</h2>
         </div>
         """
 

@@ -66,7 +66,7 @@ if classification_tipo == 'Random Forest':
     parameter_min_samples_split  = st.number_input("O número mínimo de amostras por nó interno (min_samples_split)",1, 10, 2, 1)
     parameter_min_samples_leaf = st.number_input('O número mínimo de amostras por folha (min_samples_leaf)', 1, 10, 1, 1)
     parameter_random_state = st.number_input('Número da semente (random_state)', 0, 1000, 42, 1,)
-    parameter_max_depth = st.number_input('Profundidade máxima da árvore (max_depth)', None, 128, 2, 4)
+    parameter_max_depth = st.number_input('Profundidade máxima da árvore (max_depth)', None, 128, 0, 4)
 
     treinar = st.button("Treine meu Modelo", key='Treino_modelo')
 
@@ -133,7 +133,7 @@ if classification_tipo == 'Random Forest':
         #st.subheader("2.2. Matriz de Confusão")
         st.subheader("3.3. Matriz de confusão")
 
-        sns.heatmap(confusion_matrix(st.session_state['y_test'], st.session_state['y_pred']), cmap='OrRd', annot=True, fmt='2.0f', annot_kws={"size": 20, "weight": "bold"})        
+        sns.heatmap(confusion_matrix(st.session_state['y_test'], st.session_state['y_pred']), cmap='OrRd', annot=True, fmt='2.0f', annot_kws={"size": 25, "weight": "bold"})        
 
         st.pyplot()
 

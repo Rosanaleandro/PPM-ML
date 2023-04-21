@@ -26,7 +26,7 @@ from utils import (binning, scaling, standardization, onehot_encoder,  ordinal_e
 #def main():
     # -------------------------------- Sidebar -------------------------------
 st.set_page_config(
-page_title="PPM-ML",
+page_title="xMML-PPP",
 page_icon="👋",
 )
 

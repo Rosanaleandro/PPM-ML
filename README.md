@@ -1,6 +1,6 @@
-## PreProcessing Method for Machine Learning (PPM-ML)
+## Explainable Machine Learning Model Supported by Pre-Processing Provenance (xMML-PPP)
 
-PPM-ML Tool é uma ferramenta desenvolvida em Python, utilizandoo o Framework Streamlit e  banco de dados PostGreSQL. A ferramenta foi desenvolvida para validar a abordagem PPM-ML e permite carregar dados brutos de um arquivo .csv ou .xlsx, realizar algumas operações de pré-processamento, como  limpeza , redução de atributos, construção de atributos, transformação,correção de amostragem de classes e particionamento dos dados entre treino e teste. Também permite treinar modelos do algoritmo Random Forest após configurar alguns parâmetros. Mostra a performance do modelo e também permite  gerar um gráfico XAI para entendimento da contribuição de cada atributo no modelo. Todas as informações são armazenadas em uma base de dados PostgreSQL.  É possível também realizar consultas à base de dados e recuperar informações dos fluxos  de trabalho realizados.
+xMML-PPP Tool é uma ferramenta desenvolvida em Python, utilizandoo o Framework Streamlit e  banco de dados PostGreSQL. A ferramenta foi desenvolvida para validar a abordagem xMML-PPP e permite carregar dados brutos de um arquivo .csv ou .xlsx, realizar algumas operações de pré-processamento, como  limpeza , redução de atributos, construção de atributos, transformação,correção de amostragem de classes e particionamento dos dados entre treino e teste. Também permite treinar modelos do algoritmo Random Forest após configurar alguns parâmetros. Mostra a performance do modelo e também permite  gerar um gráfico XAI para entendimento da contribuição de cada atributo no modelo. Todas as informações são armazenadas em uma base de dados PostgreSQL.  É possível também realizar consultas à base de dados e recuperar informações dos fluxos  de trabalho realizados.
 
 ![](img/TELA-FERRAMENTA.png)
 
@@ -15,7 +15,7 @@ PPM-ML Tool é uma ferramenta desenvolvida em Python, utilizandoo o Framework St
 6. Na página Pesquisa: Realiza consultas automatizadas a partir do número do workflow. O número do workflow é gerado a cada novo conjunto de dados carregado no aplicativo.
 ```
 
-PPM-ML permite que um arquivo de descrição de atributos seja carregado na ferramenta. Quando o arquivo é carregado a ferramenta grava em tabela a descrição correspondente a cada atributo, de modo a ser possível futuras consultas sobre a descrição do atributo. 
+xMML-PPP permite que um arquivo de descrição de atributos seja carregado na ferramenta. Quando o arquivo é carregado a ferramenta grava em tabela a descrição correspondente a cada atributo, de modo a ser possível futuras consultas sobre a descrição do atributo. 
 
 ## Configuração de conexão com a Base de dados
 
@@ -64,7 +64,7 @@ $ Abra o terminal, via Anaconda Navigator
 $ cd PPM-ML
 $ streamlit run principal.py
 ```
-## Acessar a ferramenta PPM-ML
+## Acessar a ferramenta xMML-PPP
 
 ``` url http://localhost:8501/```
 
